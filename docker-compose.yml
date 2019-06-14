@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dump:
+    build: ./dump
+    expose:
+    - "8000"
+  proxy:
+    image: envoyproxy/envoy-alpine:v1.10.0
+    command: /usr/local/bin/envoy -c /etc/config.yaml --service-cluster dumpster
+    ports:
+    - "${PORT}:10000"
+    volumes:
+    - ./proxy/config.yaml:/etc/config.yaml
