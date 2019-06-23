@@ -5,4 +5,4 @@ RUN apk add --no-cache ca-certificates
 COPY . /dump
 WORKDIR /dump
 RUN yarn
-CMD ["node", "server"]
+CMD ["node", "express-server"]

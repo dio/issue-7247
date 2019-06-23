@@ -39,6 +39,10 @@ static_resources:
                   uri: http://dump:8000
                   cluster: service_authz
                   timeout: 5s
+                authorization_request:
+                  allowed_headers:
+                    patterns:
+                    - exact: content-type
               with_request_body:
                 max_request_bytes: 8192
                 allow_partial_message: true

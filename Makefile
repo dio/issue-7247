@@ -6,4 +6,7 @@ up:
 down:
 	PORT=$(PORT) docker-compose down
 
+build:
+	PORT=$(PORT) docker-compose build
+
 .PHONY: up down
